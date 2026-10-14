@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0b1020">
+  <title>資工考研六科進度</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <p class="eyebrow">2026 研究所考試</p>
+      <h1>六科進度儀表板</h1>
+    </div>
+    <div class="header-actions">
+      <button id="exportBtn" class="secondary">匯出備份</button>
+      <label class="secondary file-button">匯入備份<input id="importInput" type="file" accept=".json"></label>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="overallTitle">
+      <div class="hero-copy">
+        <span class="status-dot"></span>
+        <p>勾選下方單元，圓環與統計會即時更新</p>
+        <h2 id="overallTitle">目前總進度</h2>
+        <div class="overall-numbers"><strong id="overallPercent">0%</strong><span id="overallCount">0 / 0 單元</span></div>
+      </div>
+      <div class="ring ring-large" id="overallRing" role="img" aria-label="六科總進度">
+        <div class="ring-center"><strong id="overallRingPercent">0%</strong><span>總進度</span></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-heading">
+        <div><p class="eyebrow">SUBJECTS</p><h2>各科進度</h2></div>
+        <span id="lastSaved" class="saved">已自動保存</span>
+      </div>
+      <div id="subjectGrid" class="subject-grid"></div>
+    </section>
+
+    <section class="units-section">
+      <div class="section-heading">
+        <div><p class="eyebrow">STUDY UNITS</p><h2>章節清單</h2></div>
+        <button id="clearFilters" class="text-button">清除篩選</button>
+      </div>
+      <div class="filters">
+        <label class="search"><span>搜尋</span><input id="searchInput" type="search" placeholder="章節、單元或來源"></label>
+        <label><span>科目</span><select id="subjectFilter"><option value="">全部科目</option></select></label>
+        <label><span>狀態</span><select id="statusFilter"><option value="">全部狀態</option><option value="todo">未完成</option><option value="done">已完成</option></select></label>
+      </div>
+      <div class="list-meta"><span id="visibleCount"></span><span>點擊整列也能切換完成狀態</span></div>
+      <div id="unitList" class="unit-list"></div>
+    </section>
+  </main>
+
+  <footer>進度保存在目前瀏覽器；可使用匯出備份在其他裝置延續。</footer>
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
