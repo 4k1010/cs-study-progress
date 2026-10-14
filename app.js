@@ -1,7 +1,7 @@
 const SUBJECTS=["線性代數","離散數學","資料結構","演算法","作業系統","計算機組織"];
 const COLORS={"線性代數":"#4f8cff","離散數學":"#9b6cff","資料結構":"#36c99a","演算法":"#ff8b45","作業系統":"#ff5f69","計算機組織":"#e8bd3f"};
-const STORAGE_KEY="cs-grad-study-progress-v1";
-const seed=Object.fromEntries(UNITS.map(u=>[u.id,Boolean(u.done)]));
+const STORAGE_KEY="cs-grad-study-progress-v2";
+const seed=Object.fromEntries(UNITS.map(u=>[u.id,false]));
 let state=loadState();
 
 function loadState(){
